@@ -18,7 +18,7 @@ namespace RealTimeCharts_Server.TimerFeatures
         {
             _action = action;
             _autoResetEvent = new AutoResetEvent(false);
-            _timer = new Timer(Execute, _autoResetEvent, 1000, 2000);
+            _timer = new Timer(Execute, _autoResetEvent, 0, 5000);
             TimerStarted = DateTime.Now;
         }
 
@@ -26,7 +26,7 @@ namespace RealTimeCharts_Server.TimerFeatures
         {
             _action();
 
-            if ((DateTime.Now - TimerStarted).Seconds > 60)
+            if ((DateTime.Now - TimerStarted).Seconds > 60) //Stops after seconds specified
             {
                 _timer.Dispose();
             }

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import * as signalR from "@aspnet/signalr";
 import { ChartModel } from '../_interfaces/chartmodel.model';
+import { IAffiliateSubmission } from '../_interfaces/affiliatesubmission.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignalRService {
   public data: ChartModel[];
+  public affiliateSubmissions: IAffiliateSubmission[];
   public broadcastedData;
  
   private hubConnection: signalR.HubConnection;
@@ -24,7 +26,8 @@ export class SignalRService {
   
   public addTransferChartDataListener = () => {
     this.hubConnection.on('transferchartdata', (data) => {
-      this.data = data;
+      //this.data = data;
+      this.affiliateSubmissions = data;
       console.log(data);
     });
   }

@@ -25,7 +25,8 @@ namespace RealTimeCharts_Server.Controllers
         public IActionResult Get()
         {
             //var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
-            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
+            //var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
+            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetAffiliateSales()));
 
             return Ok(new { Message = "Request Completed" });
         }
