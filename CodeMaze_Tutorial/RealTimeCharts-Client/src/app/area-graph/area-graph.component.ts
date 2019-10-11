@@ -59,7 +59,7 @@ export class AreaGraphComponent implements OnInit {
       for (var i = 0; i < 25; i+=1) {
         arr.push({
           "name": i.toString() + ":00",
-          "value": (1 + Math.random())s
+          "value": (1 + Math.random())
         });
       }
       return arr;
