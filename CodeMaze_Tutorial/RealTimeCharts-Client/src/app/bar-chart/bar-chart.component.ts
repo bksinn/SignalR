@@ -9,7 +9,8 @@ import { DataModel } from '../_interfaces/data.model';
   styleUrls: ['./bar-chart.component.css']
 })
 export class BarChartComponent implements OnInit, OnChanges {
-  @ViewChild('chart', {static: true}) private chartContainer: ElementRef;
+  @ViewChild('chart', {static: true}) 
+  private chartContainer: ElementRef;
 
   @Input() data: DataModel[];
 
